@@ -1,0 +1,144 @@
+{
+  "State": {
+    "Ciudad de Mexico": {
+      "infected": 138329,
+      "deceased": 10730
+    },
+    "Baja California Sur": {
+      "infected": 10925,
+      "deceased": 537
+    },
+    "Tabasco": {
+      "infected": 32868,
+      "deceased": 2893
+    },
+    "Sonora": {
+      "infected": 35177,
+      "deceased": 2971
+    },
+    "Coahuila": {
+      "infected": 28317,
+      "deceased": 1996
+    },
+    "Yucatan": {
+      "infected": 19426,
+      "deceased": 1635
+    },
+    "San Luis Potosi": {
+      "infected": 24279,
+      "deceased": 1782
+    },
+    "Tamaulipas": {
+      "infected": 30066,
+      "deceased": 2381
+    },
+    "Nuevo Leon": {
+      "infected": 43667,
+      "deceased": 3306
+    },
+    "Quintana Roo": {
+      "infected": 12590,
+      "deceased": 1743
+    },
+    "Colima": {
+      "infected": 5671,
+      "deceased": 579
+    },
+    "Guanajuato": {
+      "infected": 43054,
+      "deceased": 3099
+    },
+    "Sinaloa": {
+      "infected": 19791,
+      "deceased": 3366
+    },
+    "Campeche": {
+      "infected": 6235,
+      "deceased": 840
+    },
+    "Baja California": {
+      "infected": 22137,
+      "deceased": 3680
+    },
+    "Tlaxcala": {
+      "infected": 7820,
+      "deceased": 1133
+    },
+    "Guerrero": {
+      "infected": 20295,
+      "deceased": 2057
+    },
+    "Aguascalientes": {
+      "infected": 7753,
+      "deceased": 676
+    },
+    "Durango": {
+      "infected": 9844,
+      "deceased": 689
+    },
+    "Estado de Mexico": {
+      "infected": 88619,
+      "deceased": 13007
+    },
+    "Puebla": {
+      "infected": 32922,
+      "deceased": 4372
+    },
+    "Zacatecas": {
+      "infected": 8122,
+      "deceased": 783
+    },
+    "Nayarit": {
+      "infected": 6247,
+      "deceased": 782
+    },
+    "Michoacan": {
+      "infected": 21927,
+      "deceased": 1827
+    },
+    "Oaxaca": {
+      "infected": 18694,
+      "deceased": 1554
+    },
+    "Hidalgo": {
+      "infected": 13844,
+      "deceased": 2061
+    },
+    "Queretaro": {
+      "infected": 10086,
+      "deceased": 997
+    },
+    "Veracruz": {
+      "infected": 34679,
+      "deceased": 4591
+    },
+    "Jalisco": {
+      "infected": 29252,
+      "deceased": 3509
+    },
+    "Chihuahua": {
+      "infected": 12753,
+      "deceased": 1483
+    },
+    "Morelos": {
+      "infected": 6283,
+      "deceased": 1125
+    },
+    "Chiapas": {
+      "infected": 8079,
+      "deceased": 1323
+    }
+  },
+  "country": "Mexico",
+  "sourceUrl": "https://coronavirus.gob.mx/datos/",
+  "README": "https://apify.com/puorc/mexico-covid19?utm_source=app",
+  "historyData": "https://api.apify.com/v2/datasets/4efvuMEdxdQPCreW7/items?format=json&clean=1",
+  "infected": 809751,
+  "negative": 956251,
+  "suspected": 302645,
+  "deceased": 83507,
+  "tested": "N/A",
+  "recovered": "N/A",
+  "lastUpdatedAtApify": "2020-10-12T20:00:13.734Z",
+  "lastUpdatedAtSource": "2020-10-09T00:00:00.000Z"
+}

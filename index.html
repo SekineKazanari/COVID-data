@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID Data</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" integrity="undefined" crossorigin="anonymous">
+    
+    <script src="js/p5.min.js"></script>
+    <script src="js/sketch.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.css' rel='stylesheet' />   
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <span class="navbar-brand mb-0 h1">COVID-19 ESTADÍSTICAS EN MÉXICO</span>
+    </nav>
+    <div class="row">
+        <div id='canvas2' style='width: 100vw; height: 10vh;'></div>
+    </div> -->
+     <div class="row">
+           <div id='map' style='width: 100vw; height: 100vh;'></div>
+    </div>
+    <div class="row">
+        <div id='canvas' style='width: 100vw; height: 100vh;'></div>
+    </div>
+
+<script>
+    // TO MAKE THE MAP APPEAR YOU MUST
+    // ADD YOUR ACCESS TOKEN FROM
+    // https://account.mapbox.com
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZ2Vja29ydXNzaWFuIiwiYSI6ImNrcGdhazRpODBwemIydnBmcmRib2ljamQifQ.rYMx24MF-pvksKad7hvlfg';
+    var mapa = new mapboxgl.Map({
+    container: 'map', // container ID
+    style: 'mapbox://styles/mapbox/streets-v11', // style URL
+    center: [-99.133209,19.432608], // starting position [lng, lat]
+    zoom: 5 // starting zoom
+    });
+    let stats = [];
+    $.ajax({
+            url: "json/data.json",
+            dataType: "json",
+            mimeType: "textPlain",
+            async: false,
+            })          
+            .done(function(data){
+                stats.push(data['State']);
+            });
+    mapa.on('style.load', function () { 
+
+        mapa.addSource("covid", {
+            type: "geojson",
+            data: "json/polygons.json"
+        });
+        mapa.addLayer({
+            'id': 'layer',
+            'type': 'fill',
+            'source': 'covid',
+            'layout': {},
+            'paint': {
+            'fill-color': '#0080ff',
+            'fill-opacity': 0.5
+            }
+        });
+        mapa.addLayer({
+            'id': 'outline',
+            'type': 'line',
+            'source': 'covid',
+            'layout': {},
+            'paint': {
+            'line-color': '#FFF',
+            'line-width': 1
+            }
+        });
+        mapa.on('click', 'layer', function (e) {
+            let info =  `<b>${e.features[0].properties.entidad_nombre}</b> </br>
+                        Infectados: ${stats[0][e.features[0].properties.entidad_nombre].infected }</br>
+                        Defunciones: ${stats[0][e.features[0].properties.entidad_nombre].deceased}`
+                new mapboxgl.Popup()
+                .setLngLat(e.lngLat)
+                .setHTML(info)
+                .addTo(mapa);
+                console.log(stats[0][e.features[0].properties.entidad_nombre])
+        });
+    });
+
+</script>
+</body>
+
+</html>
