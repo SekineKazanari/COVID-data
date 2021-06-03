@@ -2,5 +2,5 @@
  Proyecto de graficación y multimedia
  
  Equipo: 
-     Perpuly Solís Nicole Isabel
+     Perpuly Solís Nicole Isabel y
      Zuñiga Medina Luis Angel
