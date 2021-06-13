@@ -28,21 +28,21 @@ const chart = function (p5){
     p5.draw = function (){
         p5.background(255);
         p5.push()
-        p5.textSize(50);
+        p5.textSize(40);
         p5.textAlign(p5.CENTER)
-        p5.text("INFECTADOS & DEFUNCIONES POR ESTADO",p5.width/2,100)
+        p5.text("INFECTADOS & DEFUNCIONES POR ESTADO",p5.width/2,30)
         p5.pop()
         p5.push()
         p5.noStroke()
         p5.textSize(15)
         p5.fill(111, 201, 217)
-        p5.rect(30,110,20,20);
+        p5.rect(130,110,20,20);
         p5.fill(0)
-        p5.text("Infectados",60,125);
+        p5.text("Infectados",160,125);
         p5.fill(245, 66, 66)
-        p5.rect(30,145,20,20);
+        p5.rect(130,145,20,20);
         p5.fill(0)
-        p5.text("Defunciones",60,160);
+        p5.text("Defunciones",160,160);
         p5.pop()
         for (let i = 0; i < columnas; i++) {
             p5.push()
@@ -86,7 +86,7 @@ const cards = function (p5){
     p5.setup = function(){
         p5.createCanvas(p5.windowWidth,p5.windowHeight);
         console.log(data.negative)
-        w = p5.width/6;
+        w = p5.width/8;
         colors = [
             [245, 66, 66],
             [75, 209, 95],
@@ -97,10 +97,10 @@ const cards = function (p5){
     
     p5.draw = function (){ 
         p5.background(255)
-        info("Infectados",p5.nfc(data.infected),10,20,w,70,p5.color(colors[0]),255)
-        info("Negativos",p5.nfc(data.negative),w+20,20,w,70,p5.color(colors[1]),255)
-        info("Sospechosos",p5.nfc(data.suspected),(w*2)+30,20,w,70,p5.color(colors[2]),255)
-        info("Defunciones",p5.nfc(data.deceased),(w*3)+40,20,w,70,p5.color(colors[3]),255)
+        info("Infectados",p5.nfc(data.infected),200,20,w,70,p5.color(colors[0]),255)
+        info("Negativos",p5.nfc(data.negative),w+240,20,w,70,p5.color(colors[1]),255)
+        info("Sospechosos",p5.nfc(data.suspected),(w*2)+280,20,w,70,p5.color(colors[2]),255)
+        info("Defunciones",p5.nfc(data.deceased),(w*3)+320,20,w,70,p5.color(colors[3]),255)
         p5.noLoop();
     }
     function info(title,body,x,y,w,h,color,textColor){
@@ -114,10 +114,10 @@ const cards = function (p5){
         p5.fill(textColor)
         p5.textSize(15);
         p5.textStyle(p5.BOLD);
-        p5.text(title,x+5,y+25)
+        p5.text(title,x+20,y+23)
         p5.textStyle(p5.ITALIC);
         p5.textSize(25);
-        p5.text(body,x+5,y+54)
+        p5.text(body,x+20,y+54)
         p5.pop()
     }
 }
