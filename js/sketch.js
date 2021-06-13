@@ -30,7 +30,7 @@ const chart = function (p5){
         p5.push()
         p5.textSize(40);
         p5.textAlign(p5.CENTER)
-        p5.text("INFECTADOS & DEFUNCIONES POR ESTADO",p5.width/2,30)
+        p5.text("INFECTADOS Y DEFUNCIONES POR ESTADO",p5.width/2,30)
         p5.pop()
         p5.push()
         p5.noStroke()
@@ -55,6 +55,7 @@ const chart = function (p5){
             p5.rect(anchoBarra,0,anchoBarra,estadisticas[i].defunciones/escala)
             p5.pop()
             p5.push()
+            p5.textAlign(p5.LEFT);
             p5.textSize(txtGrafica)
             p5.fill(0)
             p5.translate((i+2.13)*textSpace-5,p5.height-170);
@@ -64,9 +65,10 @@ const chart = function (p5){
             p5.pop()
             
             p5.textSize(tamText);
+            p5.textAlign(p5.RIGHT);
             p5.push()
             p5.fill(0)
-            p5.translate((i+2)*textSpace-5,p5.height-10);
+            p5.translate((i+2)*textSpace-5,p5.height-160);
             p5.rotate(-p5.PI/2);
             p5.text(estados[0][i],0,0)
             p5.pop()
@@ -97,10 +99,10 @@ const cards = function (p5){
     
     p5.draw = function (){ 
         p5.background(255)
-        info("Infectados",p5.nfc(data.infected),200,20,w,70,p5.color(colors[0]),255)
-        info("Negativos",p5.nfc(data.negative),w+240,20,w,70,p5.color(colors[1]),255)
-        info("Sospechosos",p5.nfc(data.suspected),(w*2)+280,20,w,70,p5.color(colors[2]),255)
-        info("Defunciones",p5.nfc(data.deceased),(w*3)+320,20,w,70,p5.color(colors[3]),255)
+        info("Infectados",p5.nfc(data.infected),30,20,w,70,p5.color(colors[0]),255)
+        info("Negativos",p5.nfc(data.negative),w+60,20,w,70,p5.color(colors[1]),255)
+        info("Sospechosos",p5.nfc(data.suspected),(w*2)+90,20,w,70,p5.color(colors[2]),255)
+        info("Defunciones",p5.nfc(data.deceased),(w*3)+120,20,w,70,p5.color(colors[3]),255)
         p5.noLoop();
     }
     function info(title,body,x,y,w,h,color,textColor){
