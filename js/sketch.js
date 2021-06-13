@@ -48,7 +48,7 @@ const chart = function (p5){
             p5.push()
             p5.fill(111, 201, 217)
             p5.noStroke()
-            p5.translate((i+1.55+tamText/40)*(textSpace),p5.height-220);
+            p5.translate((i+1.55+tamText/40)*(textSpace),p5.height-170);
             p5.rotate(p5.PI);
             p5.rect(0,0,anchoBarra,estadisticas[i].infectados/escala)
             p5.fill(245, 66, 66)
@@ -57,7 +57,7 @@ const chart = function (p5){
             p5.push()
             p5.textSize(txtGrafica)
             p5.fill(0)
-            p5.translate((i+2.13)*textSpace-5,p5.height-220);
+            p5.translate((i+2.13)*textSpace-5,p5.height-170);
             p5.rotate(-p5.PI/2);
             p5.text(estadisticas[i].infectados,(estadisticas[i].infectados/escala)+5,-anchoBarra/3)
             p5.text(estadisticas[i].defunciones,(estadisticas[i].defunciones/escala)+5,-anchoBarra*1.4)
@@ -66,7 +66,7 @@ const chart = function (p5){
             p5.textSize(tamText);
             p5.push()
             p5.fill(0)
-            p5.translate((i+2)*textSpace-5,p5.height-50);
+            p5.translate((i+2)*textSpace-5,p5.height-10);
             p5.rotate(-p5.PI/2);
             p5.text(estados[0][i],0,0)
             p5.pop()
